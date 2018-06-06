@@ -27,6 +27,8 @@ stage('checkout test cases')
 dir('/tmp/externalCI') 
 {  
 //checkout scm
+    git credentialsId: 'a7cb5dec-9051-40cb-942b-d8423f3be9bb', url: 'https://github.com/LableOrg/java-maven-junit-helloworld.git'
+
 echo 'test cases are downloaded to the local folder'
 } 
  }
