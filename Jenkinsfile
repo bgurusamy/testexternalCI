@@ -55,8 +55,9 @@ echo 'test cases are downloaded to the local folder'
                              }
             }
             post {
-                success {
+                always {
                  echo 'test success'
+                     archive "target/**/*"
                     junit 'target/surefire-reports/**/*.xml' 
                 }
      }
