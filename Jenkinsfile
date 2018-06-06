@@ -84,14 +84,18 @@ echo 'test cases are downloaded to the local folder'
                }
                             }
             }
-            post {
-                always {
-                 echo 'test success'
+      
+  }
+       stage ('archive the artificats') {
+            steps {
+              
+                
                      archiveArtifacts artifacts: '**/target/*.jar',
                     junit 'target/surefire-reports/**/*.xml' 
+                 echo 'archiving the artificats is completed '
                 }
      }
-    }
+    
       stage('Quality Analysis') {
     steps {
               withSonarQubeEnv('sonarqube') {
