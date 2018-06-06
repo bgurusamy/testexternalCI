@@ -111,6 +111,20 @@ echo 'test cases are downloaded to the local folder'
     }
    }
       }
+           stage ('deploy the artificats') {
+            steps {
+                 dir('/tmp/externalCI') 
+{ 
+             //local tomcat
+                   sh ' cp target/java-maven-junit-helloworld-1.0-SNAPSHOT.jar  /Applications/apache-tomcat-9.0.8/lib/
+              //remote tomcat
+                    // sshagent(['CREDENTIALS_ID']) {
+                     // sh 'scp target/java-maven-junit-helloworld-1.0-SNAPSHOT.jar lsauser@10.255.171.195:/opt/apache-tomcat-9.0.8/lib/'
+                    //}
+                 echo 'deploying the artificats is completed '
+}
+                }
+     }
     
             //  to send  final slack notification
      stage('send final notification') {
