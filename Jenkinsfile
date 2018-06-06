@@ -53,15 +53,13 @@ echo 'test cases are downloaded to the local folder'
                              sh "mvn clean install"
                }
                              }
+            }
             post {
                 success {
                  echo 'test success'
                     //junit 'target/surefire-reports/**/*.xml' 
                 }
-        
-        
-        }
-    }
+     }
     }
       stage('Quality Analysis') {
     steps {
