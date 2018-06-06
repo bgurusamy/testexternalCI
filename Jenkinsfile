@@ -57,7 +57,7 @@ echo 'test cases are downloaded to the local folder'
             post {
                 success {
                  echo 'test success'
-                    //junit 'target/surefire-reports/**/*.xml' 
+                    junit 'target/surefire-reports/**/*.xml' 
                 }
      }
     }
