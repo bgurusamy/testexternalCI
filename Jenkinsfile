@@ -9,7 +9,16 @@ pipeline {
                 slackSend channel: '#visetest', color: 'good', message: "STARTED: '${JOB_NAME} ${BUILD_NUMBER}' ",baseUrl:'https://cim.slack.com/services/hooks/jenkins-ci/',teamDomain:'cim',token:'ldhDuSiSkvnLEeFLUPyWndJF'
             }
         }
-        
+        stage('Delete old files')
+         {
+            steps 
+             {
+                 dir('/tmp/externalCI') {
+                    deleteDir()
+                     echo 'old files are deleted'
+}
+             }
+         }
         
         stage('create custom work space') 
 {
