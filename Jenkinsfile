@@ -65,7 +65,7 @@ echo 'test cases are downloaded to the local folder'
       withMaven(maven:'maven_local') {
 
              
-                             sh "mvn run"
+                             sh "mvn verify"
            echo 'integration test cases are completed'
                }
                             }
