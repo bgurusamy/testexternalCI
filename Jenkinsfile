@@ -88,11 +88,13 @@ echo 'test cases are downloaded to the local folder'
   }
        stage ('archive the artificats') {
             steps {
-              
-                
-                     archiveArtifacts artifacts: '**/target/*.jar',
+                 dir('/tmp/externalCI') 
+{ 
+              sh 'make'
+                archiveArtifacts artifacts: '**/target/*.jar',
                     junit 'target/surefire-reports/**/*.xml' 
                  echo 'archiving the artificats is completed '
+}
                 }
      }
     
