@@ -100,10 +100,13 @@ echo 'test cases are downloaded to the local folder'
     
       stage('Quality Analysis') {
     steps {
+          dir('/tmp/externalCI') 
+{ 
               withSonarQubeEnv('sonarqube') {
                  withEnv(["JAVA_HOME=${ tool 'jdk8' }", "PATH+MAVEN=${tool 'maven_local'}/bin:${env.JAVA_HOME}/bin"]) {   
                 sh 'mvn clean package sonar:sonar'
                  }
+              }
               
     }
    }
