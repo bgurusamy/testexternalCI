@@ -80,14 +80,14 @@ echo 'test cases are downloaded to the local folder'
               withMaven(maven:'maven_local') {
 
              
-                             sh "mvn clean install"
+                             sh "mvn clean install -Dmaven.skip.test=true"
                }
                             }
             }
             post {
                 always {
                  echo 'test success'
-                     archive "target/**/*"
+                     archiveArtifacts artifacts: '**/target/*.jar',
                     junit 'target/surefire-reports/**/*.xml' 
                 }
      }
