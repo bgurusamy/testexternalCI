@@ -26,7 +26,7 @@ stage('checkout test cases')
     steps{
 dir('/tmp/externalCI') 
 {  
-checkout scm
+//checkout scm
 echo 'test cases are downloaded to the local folder'
 } 
  }
