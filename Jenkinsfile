@@ -116,7 +116,7 @@ echo 'test cases are downloaded to the local folder'
                  dir('/tmp/externalCI') 
 { 
              //local tomcat
-                   sh 'cp target/java-maven-junit-helloworld-1.0-SNAPSHOT.jar  /Applications/apache-tomcat-9.0.8/lib/'
+                   sh 'cp target/java-maven-junit-helloworld-1.0-SNAPSHOT.jar /users/bgurus001c/Downloads/apache-tomcat-9.0.8/lib/'
               //remote tomcat
                     // sshagent(['CREDENTIALS_ID']) {
                      // sh 'scp target/java-maven-junit-helloworld-1.0-SNAPSHOT.jar lsauser@10.255.171.195:/opt/apache-tomcat-9.0.8/lib/'
