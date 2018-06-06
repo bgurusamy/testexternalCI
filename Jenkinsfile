@@ -43,7 +43,7 @@ echo 'test cases are downloaded to the local folder'
  }
 }
          
-          stage ('unit test') {
+          stage ('executing unit testing') {
             steps {
  dir('/tmp/externalCI') 
 {  
@@ -51,13 +51,29 @@ echo 'test cases are downloaded to the local folder'
 
              
                              sh "mvn test"
+           echo 'unit test cases are completed'
+               }
+                            }
+            }
+    
+          }
+         
+          stage ('executing integration testing') {
+            steps {
+ dir('/tmp/externalCI') 
+{  
+      withMaven(maven:'maven_local') {
+
+             
+                             sh "mvn run"
+           echo 'integration test cases are completed'
                }
                             }
             }
     
           }
  
-  stage ('Build') {
+  stage ('executing the build') {
             steps {
  dir('/tmp/externalCI') 
 {  
