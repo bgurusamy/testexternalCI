@@ -45,14 +45,14 @@ echo 'test cases are downloaded to the local folder'
  
   stage ('Build') {
             steps {
- dir('/tmp/externalCI') 
-{  
+ //dir('/tmp/externalCI') 
+//{  
               withMaven(maven:'maven_local') {
 
              
                              sh "mvn clean install"
                }
-                             }
+                       //      }
             }
             post {
                 always {
